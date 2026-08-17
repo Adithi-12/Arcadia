@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Snake Game | Arcadia</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body {
+            background: url("../assets/images/snakebg.jpg") no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+        }
+        canvas {
+            background: #000;
+            display: block;
+            margin: 20px auto;
+            border: 2px solid #333;
+        }
+        .score {
+            text-align: center;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+    <h1>Snake Game</h1>
+    </header>
+
+    <div class="snake-wrap">
+    <div class="snake-hud">
+        <div class="snake-title">🐍 Snake</div>
+        <div class="snake-score">Score: <span id="score">0</span></div>
+    </div>
+
+    <div style="position: relative;">
+        <canvas id="gameCanvas" width="400" height="400"></canvas>
+
+        <!-- Start / Game Over Overlay -->
+        <div id="snakeOverlay" class="snake-overlay">
+        <div class="card">
+            <div id="overlayTitle" class="big">Press Arrow Key to Start</div>
+            <div id="overlayHint" class="hint">Use ⬅️ ⬆️ ➡️ ⬇️ to move</div>
+        </div>
+        </div>
+    </div>
+
+    <div style="text-align:center; margin-top:14px;">
+        <button onclick="restartGame()" class="btn">Restart</button>
+        <a href="../index.html" class="btn">Exit</a>
+    </div>
+    </div>
+
+    <script src="../js/snake.js"></script>
+
+</body>
+</html>

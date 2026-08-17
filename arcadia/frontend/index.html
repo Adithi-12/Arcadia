@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcadia - Multi-Game Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header id="mainHeader">
+            <h1>🎮 ARCADIA</h1>
+            <p>Your Ultimate Multi-Game Platform</p>
+        </header>
+
+        <!-- Home Section with Game Cards -->
+        <div id="homeSection">
+            <div class="games-grid">
+                <!-- Tic-Tac-Toe Card -->
+                <div class="game-card" onclick="loadGame('ticTacToe')">
+                    <h2>⭕ Tic-Tac-Toe</h2>
+                    <p>Classic strategy game for two players</p>
+                    <button class="play-btn">Play Now</button>
+                </div>
+
+                <!-- Snake Game Card -->
+                <div class="game-card" onclick="loadGame('snake')">
+                    <h2>🐍 Snake Game</h2>
+                    <p>Control the snake and eat food to grow</p>
+                    <button class="play-btn">Play Now</button>
+                </div>
+
+                <!-- Flappy Bird Card -->
+                <div class="game-card" onclick="loadGame('flappyBird')">
+                    <h2>🐦 Flappy Bird</h2>
+                    <p>Navigate through pipes by tapping</p>
+                    <button class="play-btn">Play Now</button>
+                </div>
+            </div>
+
+            <!-- Leaderboard Section -->
+            <div class="leaderboard">
+                <h2>🏆 Top Scores</h2>
+                <ul class="leaderboard-list" id="leaderboardList">
+                    <li class="leaderboard-item">Loading...</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ========== TIC-TAC-TOE GAME ========== -->
+        <div id="ticTacToeGame" class="game-container">
+            <div class="game-header">
+                <h2>⭕ Tic-Tac-Toe</h2>
+                <button class="back-btn" onclick="backToHome()">← Back</button>
+            </div>
+            <div class="score-display">Current Player: <span id="currentPlayer">X</span></div>
+            <div id="ticTacToeBoard"></div>
+            <div class="game-controls">
+                <button class="control-btn" onclick="resetTicTacToe()">Restart</button>
+            </div>
+        </div>
+
+        <!-- ========== SNAKE GAME ========== -->
+        <div id="snakeGame" class="game-container">
+            <div class="game-header">
+                <h2>🐍 Snake Game</h2>
+                <button class="back-btn" onclick="backToHome()">← Back</button>
+            </div>
+            <div class="score-display">Score: <span id="snakeScore">0</span></div>
+            <canvas id="snakeCanvas" width="400" height="400"></canvas>
+            <div class="game-controls">
+                <button class="control-btn" onclick="startSnake()">Start</button>
+                <button class="control-btn" onclick="pauseSnake()">Pause</button>
+                <button class="control-btn" onclick="resetSnake()">Restart</button>
+            </div>
+            <p style="text-align: center; margin-top: 15px; color: #666;">Use Arrow Keys to control</p>
+        </div>
+
+        <!-- ========== FLAPPY BIRD GAME ========== -->
+        <div id="flappyBirdGame" class="game-container">
+            <div class="game-header">
+                <h2>🐦 Flappy Bird</h2>
+                <button class="back-btn" onclick="backToHome()">← Back</button>
+            </div>
+            <div class="score-display">Score: <span id="flappyScore">0</span></div>
+            <canvas id="flappyCanvas" width="400" height="600"></canvas>
+            <div class="game-controls">
+                <button class="control-btn" onclick="startFlappy()">Start</button>
+                <button class="control-btn" onclick="resetFlappy()">Restart</button>
+            </div>
+            <p style="text-align: center; margin-top: 15px; color: #666;">Click or Press Space to Fly</p>
+        </div>
+    </div>
+
+    <!-- Link JavaScript File -->
+    <script src="games.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Rock Paper Scissors | Arcadia</title>
+  <link rel="stylesheet" href="../css/rps.css" />
+</head>
+<body>
+
+  <header>
+    <h1>✊📄✂️ Rock Paper Scissors</h1>
+  </header>
+
+  <div class="scoreboard">
+    <span>You: <b id="playerScore">0</b></span>
+    <span>Computer: <b id="aiScore">0</b></span>
+  </div>
+
+  <div class="arena">
+    <div class="choice" id="playerChoice">❔</div>
+    <div class="vs">VS</div>
+    <div class="choice" id="aiChoice">❔</div>
+  </div>
+
+  <div class="buttons">
+    <button onclick="play('rock')">✊ Rock</button>
+    <button onclick="play('paper')">📄 Paper</button>
+    <button onclick="play('scissors')">✂️ Scissors</button>
+  </div>
+
+  <div id="result" class="result"></div>
+
+  <div class="controls">
+    <button onclick="restartGame()" class="btn">🔄 Restart</button>
+    <a href="../index.html" class="btn">❌ Exit</a>
+  </div>
+
+  <script src="../js/rps.js"></script>
+</body>
+</html>

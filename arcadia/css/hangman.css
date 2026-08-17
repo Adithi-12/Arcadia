@@ -1,0 +1,115 @@
+.hangman-wrap {
+    max-width: 520px;
+    margin: 30px auto;
+    background: #111;
+    padding: 22px;
+    border-radius: 16px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.4);
+    color: white;
+}
+
+.hangman-hud {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.hangman-title {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.hangman-lives {
+    background: #222;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.hangman-board {
+    text-align: center;
+    padding: 24px 16px;
+    background: #000;
+    border-radius: 12px;
+    min-height: 220px;
+}
+
+.word {
+    letter-spacing: 10px;
+    font-size: 32px;
+    margin-bottom: 18px;
+}
+
+.letters {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+}
+
+.letters button {
+    padding: 10px 0;
+    background: #222;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.letters button:hover {
+    background: #333;
+    transform: translateY(-1px);
+}
+
+.letters button:disabled {
+    background: #444;
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.hangman-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.hangman-overlay.hidden {
+    display: none;
+}
+
+.hangman-card {
+    background: #111;
+    padding: 28px 36px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+    animation: pop 0.2s ease;
+}
+
+.overlay-title {
+    font-size: 34px;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.overlay-word {
+    margin-bottom: 16px;
+    opacity: 0.8;
+}
+
+.overlay-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+@keyframes pop {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}

@@ -1,0 +1,82 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hangman | Arcadia</title>
+  <link rel="stylesheet" href="../css/hangman.css" />
+</head>
+<body>
+
+  <div class="game-container">
+
+  <h1>🎯 Hangman</h1>
+  
+
+    <div class="stats">
+      <span>Lives: <b id="lives">6</b></span>
+      <span>Score: <b id="score">0</b></span>
+    </div>
+
+    <div id="word" class="word">_ _ _ _</div>
+
+    <div id="keyboard" class="keyboard"></div>
+
+    <div id="resultModal" class="modal hidden">
+      <div class="modal-content">
+        <h2 id="resultText">You Won!</h2>
+        <button onclick="restartGame()">Play Again</button>
+        <a href="../index.html" class="back">⬅ Back to Home</a>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- <script src="../js/hangman.js"></script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hangman | Arcadia</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/hangman.css">
+</head>
+<body>
+
+<header>
+    <h1>Hangman</h1>
+</header>
+
+<div class="hangman-wrap">
+    <div class="hangman-hud">
+        <div class="hangman-title">🎯 Hangman</div>
+        <div class="hangman-lives">Lives: <span id="lives">6</span></div>
+    </div>
+
+    <div class="hangman-board">
+        <div id="word" class="word">_ _ _ _</div>
+        <div id="letters" class="letters"></div>
+    </div>
+
+    <!-- Game Over Overlay -->
+    <div id="hangmanOverlay" class="hangman-overlay hidden">
+        <div class="hangman-card">
+            <div id="overlayTitle" class="overlay-title">YOU WON</div>
+            <div id="overlayWord" class="overlay-word"></div>
+            <div class="overlay-actions">
+                <button onclick="restartGame()" class="btn">Restart</button>
+                <a href="../index.html" class="btn">Exit</a>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align:center; margin-top:14px;">
+        <button onclick="restartGame()" class="btn">Restart</button>
+        <a href="../index.html" class="btn">Exit</a>
+    </div>
+</div>
+
+<script src="../js/hangman.js"></script>
+</body>
+</html>

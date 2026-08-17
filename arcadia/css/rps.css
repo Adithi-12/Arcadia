@@ -1,0 +1,83 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #232526, #414345);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+header {
+  padding: 20px;
+}
+
+.scoreboard {
+  display: flex;
+  gap: 40px;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.arena {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin: 20px 0;
+}
+
+.choice {
+  width: 100px;
+  height: 100px;
+  border-radius: 16px;
+  background: #00c6ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+}
+
+.vs {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+  margin: 10px 0 20px;
+}
+
+.buttons button {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  background: #00ff99;
+}
+
+.result {
+  font-size: 22px;
+  font-weight: 900;
+  min-height: 28px;
+  margin-bottom: 10px;
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.controls .btn {
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: #00ff99;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}

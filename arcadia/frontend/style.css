@@ -1,0 +1,540 @@
+/* ==================== GLOBAL STYLES ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ==================== SCREEN MANAGEMENT ==================== */
+.screen {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.screen.active {
+    display: block;
+}
+
+/* ==================== HOME SCREEN ==================== */
+#homeScreen {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-content {
+    text-align: center;
+    width: 100%;
+}
+
+.logo-container {
+    margin-bottom: 60px;
+    animation: bounceIn 1s ease;
+}
+
+.logo {
+    font-size: 5em;
+    text-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    margin-bottom: 10px;
+}
+
+.tagline {
+    font-size: 1.5em;
+    opacity: 0.9;
+    letter-spacing: 2px;
+}
+
+.home-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    margin: 60px 0;
+}
+
+.main-btn {
+    width: 300px;
+    padding: 20px 40px;
+    font-size: 1.8em;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+.play-btn-home {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+}
+
+.play-btn-home:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(245, 87, 108, 0.5);
+}
+
+.settings-btn-home {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+}
+
+.settings-btn-home:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(79, 172, 254, 0.5);
+}
+
+.btn-icon {
+    font-size: 1.2em;
+}
+
+.home-stats {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 80px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-value {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #f5576c;
+}
+
+.stat-label {
+    font-size: 1em;
+    opacity: 0.8;
+    margin-top: 5px;
+}
+
+/* ==================== SCREEN HEADER ==================== */
+.screen-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+}
+
+.screen-header h2 {
+    font-size: 2.5em;
+}
+
+.back-btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+/* ==================== GAMES GRID ==================== */
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 30px 0;
+}
+
+.game-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.game-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.game-card:hover::before {
+    opacity: 1;
+}
+
+.game-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.game-icon {
+    font-size: 4em;
+    margin-bottom: 15px;
+}
+
+.game-card h3 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.game-card p {
+    opacity: 0.9;
+    margin-bottom: 15px;
+}
+
+.game-plays {
+    font-size: 0.9em;
+    opacity: 0.7;
+    margin-top: 10px;
+}
+
+/* ==================== SETTINGS SCREEN ==================== */
+.settings-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.setting-group {
+    margin-bottom: 40px;
+}
+
+.setting-group h3 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #f5576c;
+}
+
+.setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.setting-item label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.setting-icon {
+    font-size: 1.5em;
+}
+
+/* Toggle Switch */
+.switch {
+    position: relative;
+    width: 60px;
+    height: 30px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: 0.4s;
+    border-radius: 30px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+input:checked + .slider:before {
+    transform: translateX(30px);
+}
+
+/* Select Dropdown */
+.setting-select {
+    padding: 10px 20px;
+    font-size: 1em;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    min-width: 150px;
+}
+
+.setting-select option {
+    background: #667eea;
+    color: white;
+}
+
+.save-settings-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.3em;
+    font-weight: bold;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.save-settings-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(245, 87, 108, 0.5);
+}
+
+/* ==================== LEADERBOARD ==================== */
+.leaderboard-section {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    margin-top: 40px;
+}
+
+.leaderboard-section h3 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.leaderboard-list {
+    list-style: none;
+}
+
+.leaderboard-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px 20px;
+    margin: 10px 0;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.leaderboard-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+}
+
+.rank {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #f5576c;
+    min-width: 40px;
+}
+
+/* ==================== GAME SCREENS ==================== */
+.game-screen {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 30px;
+    color: #333;
+}
+
+.score-display {
+    text-align: center;
+    font-size: 1.8em;
+    margin: 20px 0;
+    color: #667eea;
+    font-weight: bold;
+}
+
+.game-controls {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.control-btn {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    margin: 0 10px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.control-btn:hover {
+    background: #764ba2;
+    transform: scale(1.05);
+}
+
+.control-hint {
+    text-align: center;
+    margin-top: 15px;
+    color: #666;
+    font-size: 1em;
+}
+
+/* ==================== CANVAS ==================== */
+canvas {
+    display: block;
+    margin: 20px auto;
+    border: 4px solid #667eea;
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+/* ==================== TIC-TAC-TOE BOARD ==================== */
+.ttt-board {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    gap: 15px;
+    margin: 30px auto;
+    justify-content: center;
+}
+
+.ttt-cell {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+    border: 4px solid #667eea;
+    border-radius: 15px;
+    font-size: 3em;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    color: #667eea;
+}
+
+.ttt-cell:hover {
+    background: linear-gradient(135deg, #e0e0e0 0%, #d0d0d0 100%);
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.ttt-cell.disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* ==================== ANIMATIONS ==================== */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+    .logo {
+        font-size: 3.5em;
+    }
+    
+    .main-btn {
+        width: 250px;
+        font-size: 1.5em;
+        padding: 15px 30px;
+    }
+    
+    .games-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    canvas {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .ttt-board {
+        grid-template-columns: repeat(3, 90px);
+        gap: 10px;
+    }
+    
+    .ttt-cell {
+        width: 90px;
+        height: 90px;
+        font-size: 2.5em;
+    }
+    
+    .home-stats {
+        gap: 30px;
+    }
+    
+    .stat-value {
+        font-size: 2em;
+    }
+}

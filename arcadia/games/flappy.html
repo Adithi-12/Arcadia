@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flappy Bird | Arcadia</title>
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+      body {
+            background: url("../assets/images/flappybg.jpg") no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+        }
+        canvas {
+            background: skyblue;
+            display: block;
+            margin: 20px auto;
+            border: 2px solid #333;
+        }
+        .score {
+            text-align: center;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+<header>
+  <h1>Flappy Bird</h1>
+</header>
+
+<div class="flappy-wrap">
+  <div class="flappy-hud">
+    <div class="flappy-title">🐤 Flappy</div>
+    <div class="flappy-score">Score: <span id="score">0</span></div>
+  </div>
+
+  <div style="position: relative;">
+    <!-- <canvas id="gameCanvas" width="700" height="500"></canvas> -->
+    <canvas id="gameCanvas" width="900" height="600"></canvas>
+
+
+    <!-- Start / Game Over Overlay -->
+    <div id="flappyOverlay" class="flappy-overlay">
+      <div class="card">
+        <div id="flappyOverlayTitle" class="big">Tap / Press Space to Start</div>
+        <div id="flappyOverlayHint" class="hint">Click canvas or press Space to flap</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center; margin-top:14px;">
+    <button class="btn" onclick="restartGame()">Restart</button>
+    <a href="../index.html" class="btn">Exit</a>
+  </div>
+</div>
+
+<script src="../js/flappy.js"></script>
+
+</body>
+</html>

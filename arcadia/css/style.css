@@ -1,0 +1,421 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Page background */
+body {
+    background-color: #f4f6f8;
+    color: #333;
+}
+
+/* Header section */
+header {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 36px;
+}
+
+header p {
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.game-wrap {
+  max-width: 520px;
+  margin: 30px auto;
+  background: #111;
+  padding: 18px 16px 22px;
+  border-radius: 16px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+  color: white;
+}
+
+.game-hud {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.game-title {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.game-score {
+  background: #222;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.game-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  border-radius: 12px;
+}
+
+.game-overlay.hidden {
+  display: none;
+}
+
+.game-overlay .card {
+  background: #1c1c1c;
+  padding: 24px 28px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.game-overlay .big {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.game-overlay .hint {
+  font-size: 14px;
+  opacity: 0.7;
+}
+/*------------------------------------------------------------------*/
+
+/* Game cards container */
+.game-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+    flex-wrap: wrap;
+}
+
+/* Individual game card */
+.game-card {
+    background-color: #fff;
+    width: 250px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.game-card h2 {
+    margin-bottom: 10px;
+}
+
+.game-card p {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+/* Start game button */
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Footer section */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #222;
+    color: #fff;
+    margin-top: 40px;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .game-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+/* Snake UI – Neon Arcade Theme */
+.snake-wrap {
+  max-width: 520px;
+  margin: 30px auto;
+  background: radial-gradient(120% 120% at 50% 0%, #0b1b2a 0%, #050a12 60%, #02050a 100%);
+  border-radius: 18px;
+  padding: 16px 16px 20px;
+  box-shadow: 0 0 30px rgba(0, 255, 170, 0.15), inset 0 0 30px rgba(0, 255, 170, 0.08);
+}
+
+.snake-hud {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #b9ffef;
+  margin-bottom: 10px;
+}
+
+.snake-title {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.snake-score {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+#gameCanvas {
+  border-radius: 12px;
+  border: 2px solid rgba(0, 255, 170, 0.35);
+  box-shadow: 0 0 18px rgba(0, 255, 170, 0.35);
+}
+
+/* Overlay snake game */
+.snake-overlay {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(3px);
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 12px;
+}
+
+.snake-overlay .card {
+  background: #0b1420;
+  color: #eafffb;
+  padding: 22px 26px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(0, 255, 170, 0.25);
+  animation: popIn 0.25s ease;
+}
+
+.snake-overlay .big {
+  font-size: 28px;
+  font-weight: 800;
+  color: #7cffd8;
+  margin-bottom: 6px;
+}
+
+.snake-overlay .hint {
+  opacity: 0.85;
+  font-size: 14px;
+}
+
+@keyframes popIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to   { transform: scale(1);   opacity: 1; }
+}
+
+
+/* Flappy UI – Sky Arcade */
+.flappy-wrap {
+  max-width: 520px;
+  margin: 30px auto;
+  background: linear-gradient(180deg, #cfefff 0%, #eaf7ff 40%, #f7fbff 100%);
+  border-radius: 18px;
+  padding: 16px 16px 20px;
+  box-shadow: 0 10px 30px rgba(0, 120, 255, 0.15);
+}
+
+.flappy-hud {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #0b3b5a;
+  margin-bottom: 10px;
+}
+
+.flappy-title {
+  font-weight: 800;
+  letter-spacing: 0.4px;
+}
+
+.flappy-score {
+  font-size: 14px;
+}
+
+#gameCanvas {
+  background: linear-gradient(180deg, #87ceeb 0%, #cfefff 60%, #eaf7ff 100%);
+  border-radius: 12px;
+  border: 2px solid rgba(0, 120, 255, 0.25);
+  box-shadow: 0 0 16px rgba(0, 120, 255, 0.25);
+}
+/* Flappy UI – Sky Arcade Theme */
+.flappy-wrap {
+  /* max-width: 520px; */
+  max-width: 960px; 
+  margin: 30px auto;
+  background: linear-gradient(180deg, #9ddcff 0%, #cfefff 40%, #eaf7ff 100%);
+  border-radius: 18px;
+  padding: 16px 16px 20px;
+  box-shadow: 0 0 30px rgba(0, 120, 255, 0.25);
+}
+
+.flappy-hud {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #063a6b;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.flappy-title { letter-spacing: 0.4px; }
+.flappy-score { font-size: 14px; opacity: 0.9; }
+
+#gameCanvas {
+  border-radius: 12px;
+  border: 2px solid rgba(0, 120, 255, 0.35);
+  box-shadow: 0 0 18px rgba(0, 120, 255, 0.35);
+  background: linear-gradient(180deg, #87ceeb 0%, #cfefff 60%, #eaf7ff 100%);
+}
+
+/* Overlay flappy game*/
+.flappy-overlay {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(3px);
+  background: rgba(255, 255, 255, 0.55);
+  border-radius: 12px;
+}
+
+.flappy-overlay .card {
+  background: #ffffff;
+  color: #063a6b;
+  padding: 22px 26px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  animation: popIn 0.25s ease;
+}
+
+.flappy-overlay .big {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.flappy-overlay .hint {
+  opacity: 0.85;
+  font-size: 14px;
+}
+
+@keyframes popIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to   { transform: scale(1);   opacity: 1; }
+}
+
+/* extra home page Hero */
+.hero {
+  background: radial-gradient(120% 120% at 50% 0%, #1f2937 0%, #0b1220 60%, #02050a 100%);
+  color: #e5f2ff;
+  padding: 70px 20px 60px;
+}
+
+.hero-inner {
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 48px;
+  letter-spacing: 0.5px;
+}
+
+.hero p {
+  margin-top: 8px;
+  opacity: 0.9;
+}
+
+.hero-actions {
+  margin-top: 18px;
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 2px solid rgba(0, 123, 255, 0.7);
+  color: #9ddcff;
+}
+
+.btn-ghost:hover {
+  background: rgba(0, 123, 255, 0.15);
+}
+
+/* Modern cards */
+.game-container.modern {
+  padding: 50px 20px 60px;
+  gap: 24px;
+}
+
+.game-card.modern {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #ffffff 0%, #f6fbff 100%);
+}
+
+.game-card.modern::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(120% 120% at 0% 0%, rgba(0,123,255,0.15), transparent 40%);
+  pointer-events: none;
+}
+
+.game-card.modern:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
+}
+
+.card-emoji {
+  font-size: 42px;
+  margin-bottom: 6px;
+}
+
+.game-card.modern h2 {
+  margin-top: 6px;
+}
+
+.game-card.modern p {
+  color: #4b5563;
+}
+
+/* Footer */
+footer {
+  margin-top: 30px;
+  text-align: center;
+  padding: 16px;
+  background: #0b1220;
+  color: #cfe7ff;
+}
+
+/* Mobile polish */
+@media (max-width: 600px) {
+  .hero h1 { font-size: 36px; }
+  .card-emoji { font-size: 36px; }
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pong | Arcadia</title>
+  <link rel="stylesheet" href="../css/pong.css" />
+</head>
+<body>
+
+<header>
+  <h1>🏓 Pong</h1>
+</header>
+
+<div class="scoreboard">
+  <span>Player: <b id="playerScore">0</b></span>
+  <span>Computer: <b id="aiScore">0</b></span>
+</div>
+
+<canvas id="pongCanvas" width="600" height="450"></canvas>
+
+<div class="controls">
+  <button onclick="restartGame()" class="btn">🔄 Restart</button>
+  <a href="../index.html" class="btn">❌ Exit</a>
+</div>
+
+<script src="../js/pong.js"></script>
+
+</body>
+</html>
